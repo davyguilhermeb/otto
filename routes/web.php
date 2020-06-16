@@ -37,7 +37,7 @@ Route::group(['middleware'=>'auth'],function(){
 
   Route::get('/painel', ['as' => 'site.painel', 'uses' => 'Site\PainelController@index']);
   Route::get('/painel/configurar/', ['as' => 'site.painel.configuracoes', 'uses' => 'Site\PainelController@configurar']);
-  Route::get('/painel/configurar/atualizar', ['as' => 'site.painel.atualizar', 'uses' => 'Site\PainelController@atualizar']);
+  Route::post('/painel/configurar/atualizar', ['as' => 'site.painel.atualizar', 'uses' => 'Site\UserController@atualizar']);
 
   Route::get('/painel/historico', ['as' => 'site.painel.historico', 'uses' => 'Site\PainelController@historico']);
 

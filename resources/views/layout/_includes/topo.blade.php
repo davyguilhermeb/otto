@@ -72,7 +72,7 @@
     <li>
       <div class="user-view">
         <div class="background">
-          <img src="{{ asset('img/perfil/ju.jpg') }}" class="responsive-img" />
+          <img src="{{asset($dados_user->imagem)}}" class="responsive-img" />
         </div>
       </div>
     </li>

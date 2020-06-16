@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('sobrenome');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->string('bio');
 
             $table->rememberToken();

@@ -4,21 +4,25 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use Auth;
 
 class PainelController extends Controller
 {
     //
     public function index () {
-      return view('painel/index');
+      $dados_user = Auth::user();
+
+      return view('painel/index', compact('dados_user'));
     }
 
     public function configurar () {
+      
       $id = Auth::id();
 
-      $registro = Auth::user();
+      $dados_user = Auth::user();
 
-      return view('painel/editar', compact($registro));
+      return view('painel/editar', compact('dados_user'));
     }
 
 
