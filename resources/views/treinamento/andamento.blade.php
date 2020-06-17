@@ -10,14 +10,24 @@
     <p>{{$treino->numero}}</p>
   </div>
             
-    <h1>Até aqui</h1>
+    <h2>Até aqui você visualizou:</h2>
     <div class="row">
       @foreach($registros as $registro)
+      @php $x = 0; @endphp
         <div class="col s6 m4 l2">
-          {{$registro->ideograma->nome}} {{$registro->adjetivo->nome}}
+          {{$registro[$x]->ideograma->nome}} 
+          
+          @php $y = 0; @endphp
+          
+          @while (isset($registro[$y]->adjetivo->nome)) 
+           {{ $registro[$y]->adjetivo->nome }}
+           @php $y++; @endphp
+          @endwhile
 
+          @php $x++; @endphp
         </div>
       @endforeach
+      
     </div>
 
     <p class="center-align">

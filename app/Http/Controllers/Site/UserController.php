@@ -25,14 +25,19 @@ class UserController extends Controller
             $ex = $imagem->guessClientExtension();
             $nomeImagem = "imagem_".$num.".".$ex;
             $imagem->move($dir,$nomeImagem);
-            $dados['img'] = $dir."/".$nomeImagem;
+            $dados['img'] = $dir."".$nomeImagem;
+
+            $este_user->img = $dados['img'];
+
         }
  
 
         $este_user->nome = $req['nome'];
         $este_user->sobrenome = $req['sobrenome'];
+        //$este_user->bio = str_replace(array("\r", "\n"), '', $req['bio']);
         $este_user->bio = $req['bio'];
-        $este_user->img = $dados['img'];
+
+        
 
       
         $este_user->update();

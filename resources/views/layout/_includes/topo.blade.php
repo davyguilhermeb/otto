@@ -30,7 +30,7 @@
   <nav class="z-depth-0 green">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">V.R.</a>
+        <a href="/" class="brand-logo">oTTo</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="/">Início</a></li>
@@ -56,10 +56,10 @@
   <nav class="z-depth-0 green">
     <div class="container">
       <div class="nav-wrapper center">
-        <a href="/" class="brand-logo">V.R.</a>
+        <a href="/" class="brand-logo">oTTo</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
         <ul class="right">
-          <li><a href="">Notificações <span class="new badge" data-badge-caption="novo">4</span></a></li>
+          <li><a href="">Notificações <span class="new badge" data-badge-caption="novo">0</span></a></li>
         </ul>
         <ul>
 
@@ -72,12 +72,18 @@
     <li>
       <div class="user-view">
         <div class="background">
-          <img src="{{asset($dados_user->imagem)}}" class="responsive-img" />
+          @if($dados_user->img == "" or $dados_user->img == null)
+            <img src="{{ asset('img/usuarios/perfil/sem-foto.png') }}" class="responsive-img" />
+          @else
+            <img src="{{asset($dados_user->img)}}" class="responsive-img" /> 
+          @endif
+          
         </div>
       </div>
     </li>
     <li><a href="/">Início</a></li>
-    <li><a href="" class="waves-effect waves-light btn">Sessão</a></li>
+    <li><a href="" class="waves-effect waves-light btn">Navegue</a></li>
+    <li><a href="">Sessão</a></li>
     <li><a href="{{route('site.treinamento')}}">Treinamento</a></li>
     <li><a href="{{route('site.historico')}}">Histórico</a></li>
     <li><a href="{{route('site.painel.configuracoes')}}">Configurações</a></li>

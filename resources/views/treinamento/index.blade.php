@@ -3,7 +3,7 @@
 @section('titulo','Treinamento')
 
 @section('conteudo')
-<section class="section light-green" id="treinamento-top">
+<section class="section light-green" id="topos">
   <div class="container">
   
     <div class="row">

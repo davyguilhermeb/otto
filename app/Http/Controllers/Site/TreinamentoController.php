@@ -17,12 +17,15 @@ class TreinamentoController extends Controller
 {
     //
     public function index() {
-      return view('treinamento.index');
+      $dados_user = Auth::user();
+      return view('treinamento.index', compact('dados_user'));
     }
 
 
     //inex
     public function iniciar() {
+      $dados_user = Auth::user();
+
       $ultimo_treino = auth()->user()->treinos()->orderBy('created_at', 'desc')->first();
       if ($ultimo_treino) {
 
@@ -30,7 +33,7 @@ class TreinamentoController extends Controller
         if ($ultimo_treino['situacao'] == 0) {
           //há um treinamento a ser concluido
           $proximo = $ultimo_treino['registros'] + 1;
-          //---------return redirect()->route('site.treinamento.ideograma', $proximo);
+          return redirect()->route('site.treinamento.ideograma', $proximo);
         }
         //o treinamento foi concluido
       }
@@ -78,13 +81,14 @@ class TreinamentoController extends Controller
 
 
 
-      return view('treinamento.inicio', compact('treino', 'proximo'));
+      return view('treinamento.inicio', compact('treino', 'proximo', 'dados_user'));
     }
 
     
     //
     public function ideograma() {
-      
+      $dados_user = Auth::user();
+
       $este_treino =  auth()->user()->treinos()->orderBy('created_at', 'desc')->first();
       $treino = Treino::find($este_treino->id); 
       
@@ -92,12 +96,13 @@ class TreinamentoController extends Controller
 
       $ideogramas = Ideograma::all();
 
-      return view('treinamento.ideograma', compact('ideogramas', 'treino'));
+      return view('treinamento.ideograma', compact('ideogramas', 'treino', 'dados_user'));
       
     }
 
 
     public function informacao ($ideo) {
+      $dados_user = Auth::user();
 
       $este_treino =  auth()->user()->treinos()->orderBy('created_at', 'desc')->first();
       $treino = Treino::find($este_treino->id); 
@@ -111,13 +116,15 @@ class TreinamentoController extends Controller
 
      // $adjetivos = DB::select('select * from adj_ideogramas where id = :id', ['id' => $ideograma]);
       
-      return view('treinamento.informacao', compact('adjetivos', 'ideo', 'treino'));
+      return view('treinamento.informacao', compact('adjetivos', 'ideo', 'treino', 'dados_user'));
 
 
     }
 
     public function salvar (Request $req) {
       // $num, $ideo, $adj
+      $dados_user = Auth::user();
+
       $ideograma = $req['ideograma'];
   
       $adjetivos = $req['adjetivo'];
@@ -154,6 +161,7 @@ class TreinamentoController extends Controller
 
 
     public function andamento ($treino) {
+      $dados_user = Auth::user();
       
       $treino = Treino::find($treino);
       
@@ -166,14 +174,22 @@ class TreinamentoController extends Controller
 
       $registros = $treino->registros()->get();
 
-      $proximo = $treino->registros + 1;
+      $registros = $registros->groupBy('registro');
 
-      return view('treinamento.andamento', compact('registros', 'treino', 'proximo'));
+      $registros->toArray();
+
+      //dd($registros);
+
+      $proximo = $treino->registros + 1;
+      
+      return view('treinamento.andamento', compact('registros', 'treino', 'proximo', 'dados_user'));
 
     }
 
 
     public function concluir ($treino) {
+      $dados_user = Auth::user();
+
       $treino = Treino::find($treino);
 
       $treino->situacao = 1;
@@ -185,7 +201,7 @@ class TreinamentoController extends Controller
       $alvo = Alvo::find($id_alvo);
 
 
-      return view('treinamento.concluido', compact('treino', 'alvo'));
+      return view('treinamento.concluido', compact('treino', 'alvo', 'dados_user'));
     }
 
 

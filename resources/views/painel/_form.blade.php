@@ -12,9 +12,7 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="bio" class="materialize-textarea" name="bio" rows="5">
-            {{isset($dados_user->bio) ? $dados_user->bio : ''}}
-          </textarea>
+          <textarea id="bio" class="materialize-textarea" name="bio" rows="5">{{isset($dados_user->bio) ? $dados_user->bio : ''}}</textarea>
           <label for="bio">Bio</label>
         </div>
       </div>

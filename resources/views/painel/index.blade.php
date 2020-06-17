@@ -3,18 +3,37 @@
 @section('titulo','Painel de Controle')
 
 @section('conteudo')
-<div class="container" id="treine">
+
+<section class="section light-green" id="topos">
+  <div class="container">
+  
+    <div class="row">
+      <h3>Olá, {{ $dados_user->nome}}</h3>
+      <div class="col s12 m12">
+        <p>Você não possui novas notificações.</p>
+        <p>Nenhum alvo criado por você foi visualizado recentemente.</p>
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+<div class="container" id="">
   <div class="row">
 
     <div class="col s12 m12">
+      <p>Ainda não há nada para ver aqui.</p>
+    </div>
+
+    <div class="col s12 m12">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Comece sua jornada</span>
-          <p>Uma das nossas tentativas em aumentar ao máximo a credibilidade de nosso conteúdo, consciste em assegurar que todos os usuários devidamente cadastrados realizem um pequeno treinamento. Clique no botão abaixo para realizar o seu.</p>
+          <p>Realize treinamentos com alvos reais.</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
+          <a href="{{route('site.treinamento')}}">Começar</a>
+          <!--<a href="#">This is a link</a>-->
         </div>
       </div>
     </div>
@@ -22,36 +41,15 @@
     <div class="col s12 m12">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">Comece sua jornada</span>
-          <p>Uma das nossas tentativas em aumentar ao máximo a credibilidade de nosso conteúdo, consciste em assegurar que todos os usuários devidamente cadastrados realizem um pequeno treinamento. Clique no botão abaixo para realizar o seu.</p>
+          <span class="card-title">Cadastre novos alvos</span>
+          <p>Seus alvos poderam ser visualizados por outros usuários da comunidade. <br>Você será avisado sempre que um de seus alvos for visualizado.</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
+          <a href="">(temporariamente indisponível)</a>
+          <!--<a href="#">This is a link</a>-->
         </div>
       </div>
     </div>
-
-    <div class="col s12 m12">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Pratique com alvos reais</span>
-          <p>Comece realizar </p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-    <p class="center-align">
-      <a class="btn-floating btn-large cyan pulse"><i class="material-icons">directions_bike</i></a>
-    </p>
-  </div>
 
   </div>
 </div>
