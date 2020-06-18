@@ -32,6 +32,7 @@ class CadastroController extends Controller
                     'bio' => '',
                     'password' => bcrypt($req->password)
                   ]);
+    
 
     return redirect()->route('site.login');
     }

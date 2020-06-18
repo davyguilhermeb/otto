@@ -59,7 +59,7 @@
         <a href="/" class="brand-logo">oTTo</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
         <ul class="right">
-          <li><a href="">Notificações <span class="new badge" data-badge-caption="novo">0</span></a></li>
+          <li><a href=""><span class="new badge" data-badge-caption="novidades">0</span></a></li>
         </ul>
         <ul>
 
@@ -85,6 +85,7 @@
     <li><a href="" class="waves-effect waves-light btn">Navegue</a></li>
     <li><a href="">Sessão</a></li>
     <li><a href="{{route('site.treinamento')}}">Treinamento</a></li>
+    <li><a href="{{route('site.alvos')}}">Meus Alvos</a></li>
     <li><a href="{{route('site.historico')}}">Histórico</a></li>
     <li><a href="{{route('site.painel.configuracoes')}}">Configurações</a></li>
     <li><a href="{{route('site.login.sair')}}">Sair</a></li>

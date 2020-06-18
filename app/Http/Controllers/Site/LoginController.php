@@ -10,7 +10,9 @@ class LoginController extends Controller
 {
     //
     public function index() {
-      return view('login.index');
+      $dados_user = Auth::user();
+
+      return view('login.index', compact('dados_user'));
     }
 
     public function entrar(Request $req)

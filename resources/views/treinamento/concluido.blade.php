@@ -3,18 +3,32 @@
 @section('titulo','Concluido')
 
 @section('conteudo')
+<section class="section light-green" id="topos">
+  <div class="container">
+  
+    <div class="row">
+      <div class="col s12">
+        <h3>Treinamento concluído</h3>
+      </div>
+      <div class="col s12 m12">
+        <p>Ao todo, você teve x palpites sobre o alvo.</p>
+      </div>
+    </div>
+  
+  </div>
+</section>
+
 <div class="container" id="treine">
   <div class="row">
-    
-  <div class="card-panel green">
-    <p>{{$treino->numero}}</p>
-  </div>
-            
-    <h1>Até aqui</h1>
-    <div class="row">
-      
-        <div class="col s6 m4 l2">
-          {{$treino->id}} concluido {{$alvo->nome}}
+  
+        <div class="col s12 m10 offset-m1 l8 offset-l2">
+          <p class="center">O alvo era:</p>
+          <h4 class="center">{{$alvo->nome}}</h4>
+          <p class="center">{{$alvo->endereco}}</p>
+
+          <img class="responsive-img" src="{{asset($alvo->img)}}" alt="{{ $alvo->nome }}" />
+
+          <p>{{$treino->numero}}</p>
 
         </div>
      

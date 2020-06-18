@@ -20,6 +20,8 @@ class CreateAlvosTable extends Migration
             $table->string('endereco');
             $table->text('google_maps');
             $table->string('img');
+            $table->integer('status'); //0 - aguardando aprovar, 1 - aprovado
+            $table->integer('publico'); //0 - nao, 1 - sim (mostrar em resultados ou nao)
             $table->timestamps();
         });
     }

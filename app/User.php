@@ -38,4 +38,8 @@ class User extends Authenticatable
       return $this->hasMany(Treino::class, 'id_usuario', 'id');
     }
 
+    public function alvos () {
+      return $this->hasMany(Alvo::class, 'criado_por', 'id');
+    }
+
 }

@@ -56,6 +56,13 @@ Route::group(['middleware'=>'auth'],function(){
 
   Route::get('/historico', ['as' => 'site.historico', 'uses' => 'Site\PainelController@historico']);
 
+
+  Route::get('/alvos', ['as' => 'site.alvos', 'uses' => 'Site\AlvoController@index']);
+  Route::get('/alvos/novo', ['as' => 'site.alvos.novo', 'uses' => 'Site\AlvoController@novo']);
+  Route::post('/alvos/criar', ['as' => 'site.alvos.adc', 'uses' => 'Site\AlvoController@cadastrar']);
+  Route::get('/alvos/editar/{alvo?}', ['as' => 'site.alvos.editar', 'uses' => 'Site\AlvoController@editar']);
+  Route::post('/alvos/atualizar', ['as' => 'site.alvos.atualizar', 'uses' => 'Site\AlvoController@atualizar']);
+
   
   //Route::get('/social', ['as' => 'site.social', 'uses' => 'Site\SocialController@index']);
   //Route::get('/social/{perfil?}', ['as' => 'site.social.perfil', 'uses' => 'Site\SocialController@perfil']);

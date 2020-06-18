@@ -18,7 +18,20 @@ class TreinamentoController extends Controller
     //
     public function index() {
       $dados_user = Auth::user();
-      return view('treinamento.index', compact('dados_user'));
+
+      $continuar_ultimo = 0;
+
+      $ultimo_treino = auth()->user()->treinos()->orderBy('created_at', 'desc')->first();
+      if ($ultimo_treino) {
+
+        //verifica se o último treinamento iniciado foi concluido
+        if ($ultimo_treino['situacao'] == 0) {
+          //há um treino a ser concluido
+          $continuar_ultimo = 1;
+        }
+      }
+
+      return view('treinamento.index', compact('dados_user', 'continuar_ultimo'));
     }
 
 

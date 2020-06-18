@@ -23,3 +23,17 @@ body {
 #topos {
   color: #fff;
 }
+
+/*     ANDAMENTO */
+
+
+.andamentos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.andamento_obervacao {
+  margin-bottom: 1.3em;
+  float: left;
+  
+}

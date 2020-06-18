@@ -45,7 +45,7 @@
           <p>Seus alvos poderam ser visualizados por outros usuários da comunidade. <br>Você será avisado sempre que um de seus alvos for visualizado.</p>
         </div>
         <div class="card-action">
-          <a href="">(temporariamente indisponível)</a>
+          <a href="{{ route('site.alvos.novo') }}">Cadastrar alvo</a>
           <!--<a href="#">This is a link</a>-->
         </div>
       </div>

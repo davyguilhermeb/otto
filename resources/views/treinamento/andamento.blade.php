@@ -11,20 +11,23 @@
   </div>
             
     <h2>Até aqui você visualizou:</h2>
-    <div class="row">
+    <div class="row andamentos">
+      @php $a = 0; @endphp
       @foreach($registros as $registro)
-      @php $x = 0; @endphp
-        <div class="col s6 m4 l2">
-          {{$registro[$x]->ideograma->nome}} 
+        <!--<div class="col s12 m6 l4 andamento_obervacao">-->
+        <div class="col s12 l6 andamento_obervacao">
+          <b>{{ $a." ".$registro[0]->ideograma->nome}}</b>
+          <br>
           
           @php $y = 0; @endphp
           
           @while (isset($registro[$y]->adjetivo->nome)) 
-           {{ $registro[$y]->adjetivo->nome }}
-           @php $y++; @endphp
+            {{ $registro[$y]->adjetivo->nome }}
+            <br>
+            @php $y++; @endphp
           @endwhile
 
-          @php $x++; @endphp
+          @php $a++; @endphp
         </div>
       @endforeach
       
