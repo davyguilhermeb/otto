@@ -37,6 +37,6 @@ class PainelController extends Controller
 
 
       return view('painel/historico', compact('dados_user', 'treinos'));
-
+      
     }
 }

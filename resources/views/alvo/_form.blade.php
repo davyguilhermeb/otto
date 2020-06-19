@@ -4,12 +4,12 @@
       </div>
 
       <div class="input-field">
-        <input type="text" name="endereco">
+        <input type="text" name="endereco" value="{{isset($registro->endereco) ? $registro->endereco : ''}}">
         <label>Endereço</label>
       </div>
 
       <div class="input-field">
-        <input type="text" name="gmaps">
+        <input type="text" name="gmaps" value="{{isset($registro->google_maps) ? $registro->google_maps : ''}}">
         <label>Google Maps</label>
       </div>
 

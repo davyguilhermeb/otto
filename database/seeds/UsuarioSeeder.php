@@ -14,10 +14,10 @@ class UsuarioSeeder extends Seeder
     {
         //
         $dados = [
-          'nome'=>"Teste",
+          'nome'=>"ADM",
           'sobrenome' => '',
-          'email'=>"teste@gmail.com",
-          'password'=>bcrypt("123456"),
+          'email'=>"adm@otto.com",
+          'password'=>bcrypt("otto123"),
           'img' => '',
           'bio' => ''
         ];

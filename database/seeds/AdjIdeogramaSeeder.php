@@ -216,7 +216,53 @@ class AdjIdeogramaSeeder extends Seeder
 
 
 
+        $dados = [
+          'id_ideograma'=>7,
+          'nome'=>"Alta",
+          'uso'=>0,
+        ];
 
+        AdjIdeograma::create($dados);
+
+        $dados = [
+          'id_ideograma'=>7,
+          'nome'=>"Baixa",
+          'uso'=>0,
+        ];
+
+        AdjIdeograma::create($dados);
+
+        $dados = [
+          'id_ideograma'=>7,
+          'nome'=>"Cansada",
+          'uso'=>0,
+        ];
+
+        AdjIdeograma::create($dados);
+
+        $dados = [
+          'id_ideograma'=>7,
+          'nome'=>"Em pé",
+          'uso'=>0,
+        ];
+
+        AdjIdeograma::create($dados);
+
+        $dados = [
+          'id_ideograma'=>7,
+          'nome'=>"Sentada",
+          'uso'=>0,
+        ];
+
+        AdjIdeograma::create($dados);
+
+        $dados = [
+          'id_ideograma'=>7,
+          'nome'=>"Dormindo",
+          'uso'=>0,
+        ];
+
+        AdjIdeograma::create($dados);
 
 
 

@@ -18,19 +18,24 @@
   </div>
 </section>
 
-<div class="container" id="treine">
+<div class="container inicio-conteudo fim-conteudo">
   <div class="row">
   
-        <div class="col s12 m10 offset-m1 l8 offset-l2">
-          <p class="center">O alvo era:</p>
-          <h4 class="center">{{$alvo->nome}}</h4>
-          <p class="center">{{$alvo->endereco}}</p>
+      <div class="col s12 m10 offset-m1 l8 offset-l2">
+        <p class="center">O alvo era:</p>
+        <h4 class="center">{{$alvo->nome}}</h4>
+        <p class="center">{{$alvo->endereco}}</p>
+        <p class="center"><a href="{{ $alvo->google_maps }}" target="_blank">Link para o Google Maps</a></p>
 
-          <img class="responsive-img" src="{{asset($alvo->img)}}" alt="{{ $alvo->nome }}" />
 
-          <p>{{$treino->numero}}</p>
+        <img class="responsive-img" src="{{asset($alvo->img)}}" alt="{{ $alvo->nome }}" />
 
-        </div>
+        <p class="center">Registro pessoal: {{$treino->numero}}</p>
+
+        <p class="center"><a href="{{ route('site.alvo', $alvo->id) }}">Mais informações sobre {{ $alvo->nome }}</a></p>
+
+
+      </div>
      
     </div>
 

@@ -21,18 +21,11 @@
   
   </div>
 </section>
-<section class="section" id="treinamento-cont">
 
-</section>
-
-<section class="section" id="treinamento-fot">
+<div class="content inicio-conteudo fim-conteudo">
   <p class="center-align">
     <a href="{{route('site.treinamento.iniciar')}}" class="btn-floating btn-large cyan pulse"><i class="material-icons">play_arrow</i></a>
   </p>
-</section>
-
-    
-
-  
+</div>
 
 @endsection

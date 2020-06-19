@@ -8,8 +8,10 @@
   <div class="container">
   
     <div class="row">
-      <h3>Edite nome do alvo</h3>
-      <div class="col s12 m12">
+      <div class="col s12">
+        <h3>Edite seu Alvo</h3>
+      </div>
+      <div class="col s12">
         <p>Este alvo foi visualizado .. vezes</p>
         <p>A visualização mais bem pontuada sobre este alvo pode ser visualizada <a href="">neste link</a></p>
       </div>
@@ -18,7 +20,20 @@
   </div>
 </section>
 
-<div class="container">
+<nav class="blue">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Início</a>
+        <a href="{{route('site.alvos')}}" class="breadcrumb">Seus Alvos</a>
+        <a href="#" class="breadcrumb">Editar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container inicio-conteudo fim-conteudo">
   <div class="row"><div class="col m10 offset-m1 s12">
 
     <form class="" action="{{route('site.alvos.atualizar')}}" method="post" enctype="multipart/form-data">

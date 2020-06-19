@@ -24,6 +24,8 @@ Route::get('/sobre', function () {
     return 'sobre';
 });
 
+Route::get('/alvo/{id?}', ['as' => 'site.alvo', 'uses' => 'Site\AlvoController@info']);
+
 
 Route::get('/cadastro', ['as' => 'site.cadastro', 'uses' => 'Site\CadastroController@index']);
 Route::post('/cadastro/criar', ['as' => 'site.cadastro.adc', 'uses' => 'Site\CadastroController@cadastrar']);

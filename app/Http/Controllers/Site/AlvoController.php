@@ -15,7 +15,9 @@ class AlvoController extends Controller
     public function index () {
         $dados_user = Auth::user();
 
-        $registros = Alvo::all();
+        //$registros = Alvo::all();
+
+        $registros =  auth()->user()->alvos()->get();
 
         return view('alvo.index', compact('dados_user', 'registros'));
     }
@@ -72,7 +74,9 @@ class AlvoController extends Controller
     }
 
     public function atualizar (Request $req) {
-
+        
+        $dados_user = Auth::user();
+        
         $user_id = Auth::user()->id;
 
         $dados = $req->all();
@@ -82,7 +86,7 @@ class AlvoController extends Controller
         $a_imagem = "";
 
         //Verifica se o alvo a ser alterado é do usuário
-        if ($este_alvo->criado_por == $dados['id']) {
+        if ($este_alvo->criado_por == $dados_user->id) {
             //é do usuário
             if($req->hasFile('img')){
                 $imagem = $req->file('img');
@@ -113,6 +117,16 @@ class AlvoController extends Controller
         return redirect()->route('site.alvos.editar', compact('alvo'));
 
         
+    }
+
+
+    public function info ($id) {
+        $dados_user = Auth::user();
+
+        $registro = Alvo::find($id);
+
+        return view('alvo.info', compact('registro', 'dados_user'));
+
     }
 
 }

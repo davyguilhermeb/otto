@@ -20,6 +20,18 @@
 </section>
 
 
+<nav class="blue">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Início</a>
+        <a href="#" class="breadcrumb">Seus Alvos</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 <div class="container"> 
     <div class="row">
       <table>
@@ -37,7 +49,7 @@
           @foreach($registros as $registro)
             <tr>
               <!--<td>{{ $registro->id }}</td>-->
-              <td>{{ $registro->nome }}</td>
+              <td><a href="{{ route('site.alvo', $registro->id) }}">{{ $registro->nome }}</a></td>
               <td><img height="60" src="{{asset($registro->img)}}" alt="{{ $registro->nome }}" /></td>
               <td>{{ $registro->publico }}</td>
               <td>x</td>

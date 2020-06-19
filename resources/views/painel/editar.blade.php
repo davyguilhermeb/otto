@@ -4,8 +4,19 @@
 
 @section('conteudo')
 
+<nav class="blue">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Início</a>
+        <a href="#" class="breadcrumb">Configurações</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<div class="container">
+
+<div class="container inicio-conteudo fim-conteudo">
   <h2>Editar Perfil</h2>
 
   <div class="row">

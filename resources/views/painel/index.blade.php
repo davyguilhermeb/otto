@@ -8,21 +8,32 @@
   <div class="container">
   
     <div class="row">
-      <h3>Olá, {{ $dados_user->nome}}</h3>
-      <div class="col s12 m12">
-        <p>Você não possui novas notificações.</p>
-        <p>Nenhum alvo criado por você foi visualizado recentemente.</p>
+      <div class="col s12">
+        <h3>Olá, {{ $dados_user->nome}}</h3>
+      </div>
+      <div class="col s12">
+        <p class="sub-titulo">Você não possui novas notificações.</p>
       </div>
     </div>
   
   </div>
 </section>
 
-<div class="container" id="">
+<nav class="blue">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Início</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container inicio-conteudo fim-conteudo" id="">
   <div class="row">
 
     <div class="col s12 m12">
-      <p>Ainda não há nada para ver aqui.</p>
+      <p class="center">Ainda não há nada para mostrar aqui.</p>
     </div>
 
     <div class="col s12 m12">

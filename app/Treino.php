@@ -20,4 +20,8 @@ class Treino extends Model
       return $this->hasMany(RegistroTreino::class, 'id_treino', 'id');
     }
 
+    public function alvo () {
+      return $this->hasOne(Alvo::class, 'id', 'id_alvo');
+    }
+
 }

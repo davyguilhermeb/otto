@@ -3,7 +3,7 @@
 @section('titulo','Andamento')
 
 @section('conteudo')
-<div class="container" id="treine">
+<div class="container inicio-conteudo fim-conteudo">
   <div class="row">
     
   <div class="card-panel green">

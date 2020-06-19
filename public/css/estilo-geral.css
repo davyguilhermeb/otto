@@ -37,3 +37,42 @@ body {
   float: left;
   
 }
+
+.inicio-conteudo {
+  margin-top: 2.3em;
+}
+
+.fim-conteudo {
+  margin-bottom: 2.3em;
+}
+
+.historico-box {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+.historico-box .img {
+  width: 29%;
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.historico-box .info {
+  width: 67%;
+  position: relative;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-titulo {
+  font-size: 1.3em;
+}
+
+.opc-ideograma {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
